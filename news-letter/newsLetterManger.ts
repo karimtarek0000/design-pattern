@@ -6,11 +6,11 @@ import User from "./User";
 
 class NewsLetterManger {
   private subscribers: Map<ArticleType, ISubscriber[]>;
-  private article: Article[];
+  private articles: Article[];
 
   constructor() {
     this.subscribers = new Map();
-    this.article = [];
+    this.articles = [];
   }
 
   public subscribe(articleType: ArticleType, subscriber: ISubscriber): void {
@@ -24,7 +24,7 @@ class NewsLetterManger {
   }
 
   public addArticle(articleType: ArticleType, article: Article): void {
-    this.article.push(article);
+    this.articles.push(article);
     this.notifySubscribers(articleType);
   }
 
