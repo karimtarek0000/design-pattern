@@ -4,7 +4,7 @@ import Author from "./Author";
 import { ISubscriber } from "./Subscriber.interface";
 import User from "./User";
 
-class NewsLetterManger {
+class NewsLetterManager {
   private subscribers: Map<ArticleType, ISubscriber[]>;
   private articles: Article[];
 
@@ -35,7 +35,7 @@ class NewsLetterManger {
 }
 
 // Implement
-const newsLetterManger = new NewsLetterManger();
+const newsLetterManager = new NewsLetterManager();
 
 // Users
 const karim = new User("karim", "karim@gmail.com");
@@ -49,8 +49,8 @@ const osamaAuthor = new Author("osama", "osama@gmail.com", "author", [ArticleTyp
 const designPattern = new Article("design pattern", "this is design pattern");
 const uiux = new Article("typogrhpy", "typography new fonts");
 
-newsLetterManger.subscribe(ArticleType.WEB, karim);
-newsLetterManger.subscribe(ArticleType.UIUX, merna);
+newsLetterManager.subscribe(ArticleType.WEB, karim);
+newsLetterManager.subscribe(ArticleType.UIUX, merna);
 
-newsLetterManger.addArticle(ArticleType.WEB, designPattern);
-newsLetterManger.addArticle(ArticleType.UIUX, uiux);
+newsLetterManager.addArticle(ArticleType.WEB, designPattern);
+newsLetterManager.addArticle(ArticleType.UIUX, uiux);
